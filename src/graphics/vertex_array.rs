@@ -1,5 +1,7 @@
-use crate::graphics::{Drawable, FloatRect, PrimitiveType, RenderStates, RenderTarget, Vertex};
-use csfml_graphics_sys::*;
+use crate::{
+    ffi::graphics::*,
+    graphics::{Drawable, FloatRect, PrimitiveType, RenderStates, RenderTarget, Vertex},
+};
 use std::ops::{Index, IndexMut};
 
 /// Define a set of one or more 2D primitives

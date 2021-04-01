@@ -1,5 +1,4 @@
-use crate::{graphics::Color, system::Vector2f};
-use csfml_graphics_sys as ffi;
+use crate::{ffi::graphics as ffi, graphics::Color, system::Vector2f};
 
 /// Define a point with color and texture coordinates.
 ///

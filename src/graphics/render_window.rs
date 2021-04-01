@@ -1,4 +1,5 @@
 use crate::{
+    ffi::{graphics as ffi, system::*},
     graphics::{
         CircleShape, Color, ConvexShape, CustomShape, Drawable, IntRect, PrimitiveType,
         RectangleShape, RenderStates, RenderTarget, Sprite, Text, Vertex, VertexArray,
@@ -8,8 +9,6 @@ use crate::{
     system::{SfStrConv, Vector2f, Vector2i, Vector2u},
     window::{thread_safety, ContextSettings, Cursor, Event, Handle, Style, VideoMode},
 };
-use csfml_graphics_sys as ffi;
-use csfml_system_sys::*;
 
 /// [`Window`] that can serve as a target for 2D drawing.
 ///
