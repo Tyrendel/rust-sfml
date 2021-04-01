@@ -4,10 +4,13 @@ use std::env;
 fn main() {
     // Builds the project in the directory located in `libfoo`, installing it
     // into $OUT_DIR
-    let dst = Config::new("CSFML")
-        .define("BUILD_SHARED_LIBS", "FALSE")
-        .profile("Release")
-        .build();
+    let mut cfg = Config::new("CSFML");
+    cfg.define("BUILD_SHARED_LIBS", "FALSE").profile("Release");
+    if let Ok(sfml_dir) = env::var("SFML_DIR") {
+        println!("cargo:warning=Setting custom SFML_DIR: {}", sfml_dir);
+        cfg.define("SFML_DIR", sfml_dir);
+    }
+    let dst = cfg.build();
     println!("cargo:warning=CMake output is in {}", dst.display());
 
     println!("cargo:rustc-link-search=native={}/lib", dst.display());
