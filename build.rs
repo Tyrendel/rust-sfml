@@ -21,7 +21,7 @@ fn main() {
         );
         println!("cargo:rustc-link-search=native={}", libs_dir);
     }
-    println!("cargo:rustc-flags=-lstdc++");
+    println!("cargo:rustc-flags=-l dylib=stdc++");
     println!("cargo:rustc-link-lib=static=csfml-system");
     println!("cargo:rustc-link-lib=dylib=sfml-system");
     if env::var("CARGO_FEATURE_AUDIO").is_ok() {
