@@ -14,6 +14,13 @@ fn main() {
     println!("cargo:warning=CMake output is in {}", dst.display());
 
     println!("cargo:rustc-link-search=native={}/lib", dst.display());
+    if let Ok(libs_dir) = env::var("SFML_LIBS_DIR") {
+        println!(
+            "cargo:warning=Adding custom SFML libs search path {}",
+            libs_dir
+        );
+        println!("cargo:rustc-link-search=native={}", libs_dir);
+    }
     println!("cargo:rustc-flags=-lstdc++");
     println!("cargo:rustc-link-lib=static=csfml-system");
     println!("cargo:rustc-link-lib=dylib=sfml-system");

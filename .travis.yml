@@ -18,6 +18,7 @@ script:
   - mkdir .cargo
   - mv .travis.cargo.config .cargo/config
   - export SFML_DIR='/home/travis/build/jeremyletang/rust-sfml/sfml_install/usr/local/lib/cmake/SFML/'
+  - export SFML_LIBS_DIR='/home/travis/build/jeremyletang/rust-sfml/sfml_install/usr/local/lib/'
   - cargo build --verbose
   - cargo test --features ci-headless --verbose
   - cargo doc --verbose
