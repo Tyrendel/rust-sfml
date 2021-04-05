@@ -35,5 +35,4 @@ fn main() {
         println!("cargo:rustc-link-lib=static=csfml-graphics");
         println!("cargo:rustc-link-lib=dylib=sfml-graphics");
     }
-    println!("cargo:rustc-flags=-l dylib=stdc++");
 }

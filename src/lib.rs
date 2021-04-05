@@ -46,6 +46,8 @@
     clippy::cast_sign_loss
 )]
 
+extern crate link_cplusplus;
+
 #[cfg(any(feature = "graphics", feature = "audio"))]
 mod inputstream;
 mod sf_bool_ext;
