@@ -31,6 +31,7 @@ pub use self::vertex_array::{VertexArray, Vertices};
 pub use self::vertex_buffer::{VertexBuffer, VertexBufferUsage};
 pub use self::view::View;
 pub use self::sprite::RcSprite;
+pub use self::text::RcText;
 pub mod blend_mode;
 mod circle_shape;
 mod color;
